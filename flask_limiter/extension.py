@@ -123,6 +123,7 @@ class Limiter(object):
         self.storage = storage_from_string(
             self.storage_uri
             or app.config.setdefault(C.STORAGE_URL, 'memory://'),
+            **self.storage_options
         )
         strategy = (
             self.strategy
